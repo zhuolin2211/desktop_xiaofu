@@ -12,8 +12,39 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->progressBar_music->setValue(0);
     ui->progressBar_music->setMinimum(0);
     ui->progressBar_music->setMaximum(100);
+    /*set widget background*/
+    set_background_img();
+    set_text();
+    set_size();
+}
+void MainWindow::set_text(void)
+{
+#define sheet "color:#FFFFE0;font-size:16pt;"
+    ui->label->setStyleSheet(sheet);
+    ui->label_2->setStyleSheet(sheet);
+    ui->label_3->setStyleSheet(sheet);
+#define sheet_pushbutton_text "color:#000000;font-size:16pt;"
+    ui->pushButton_stop->setStyleSheet(sheet_pushbutton_text);
+    ui->pushButton_suspend->setStyleSheet(sheet_pushbutton_text);
+    ui->pushButton_paly->setStyleSheet(sheet_pushbutton_text);
 
-
+    ui->pushButton_up->setStyleSheet(sheet_pushbutton_text);
+    ui->pushButton_down->setStyleSheet(sheet_pushbutton_text);
+    ui->pushButton_left->setStyleSheet(sheet_pushbutton_text);
+    ui->pushButton_right->setStyleSheet(sheet_pushbutton_text);
+}
+void MainWindow::set_size(void)
+{
+    ui->progressBar_music->setFixedSize(300,30);
+    ui->horizontalScrollBar_light->setFixedSize(300,30);
+    ui->horizontalScrollBar_value->setFixedSize(300,30);
+}
+void MainWindow::set_background_img(void)
+{
+    QPixmap pixmap(":/file/img/beijing.png");
+    QPalette palette;
+    palette.setBrush(QPalette::Background,QBrush(pixmap));
+    this->setPalette(palette);
 }
 
 MainWindow::~MainWindow()

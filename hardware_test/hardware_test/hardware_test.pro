@@ -24,6 +24,10 @@ FORMS    += mainwindow.ui
 
 DISTFILES += \
     rtrudio/librtaudio.so.6.0.1
+#Compile as arm
+#LIBS += -L/home/sun/project/rtaudio/rtaudio-master/linux-arm-lib -lrtaudio
+#Compile as x86
+LIBS += -L/home/sun/project/rtaudio/rtaudio-master/.libs -lrtaudio
 
-LIBS += -L/home/sun/project/rtaudio/rtaudio-master/linux-arm-lib -lrtaudio
-#LIBS += -L/home/sun/project/rtaudio/rtaudio-master/.libs -lrtaudio
+RESOURCES += \
+    file.qrc

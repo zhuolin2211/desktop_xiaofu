@@ -26,6 +26,10 @@ private slots:
     void play_progress_slot(unsigned char pro);
 private:
     Ui::MainWindow *ui;
+
+    void set_background_img(void);
+    void set_text();
+    void set_size();
 };
 
 #endif // MAINWINDOW_H
