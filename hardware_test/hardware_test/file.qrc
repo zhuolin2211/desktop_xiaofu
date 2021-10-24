@@ -1,1 +1,8 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/beijing">
+        <file>file/beijing.png</file>
+        <file>file/biejing_moban.png</file>
+        <file>file/exit_1.png</file>
+        <file>file/exit_2.png</file>
+    </qresource>
+</RCC>

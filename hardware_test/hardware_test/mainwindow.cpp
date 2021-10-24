@@ -16,15 +16,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->progressBar_music->setMaximum(100);
     /*set widget background*/
     set_background_img();
-    //set_text();
-    //set_size();
+    set_text();
+    set_size();
     Key::Key_Start_server();
     Key *key=Key::Get_Key_Global();
     connect(key,&Key::push_key,this,&MainWindow::Key_Change_slot);
 }
 void MainWindow::set_text(void)
 {
-#define sheet "color:#FFFFE0;font-size:16pt;background-color: #F0F8FF;"
+#define sheet "color:#FFFFE0;font-size:16pt;"
     ui->label->setStyleSheet(sheet);
     ui->label_2->setStyleSheet(sheet);
     ui->label_3->setStyleSheet(sheet);
@@ -37,6 +37,9 @@ void MainWindow::set_text(void)
     ui->pushButton_down->setStyleSheet(sheet_pushbutton_text);
     ui->pushButton_left->setStyleSheet(sheet_pushbutton_text);
     ui->pushButton_right->setStyleSheet(sheet_pushbutton_text);
+    ui->pushButton_quit->setStyleSheet( "#pushButton_quit {border-image: url(:/beijing/file/exit_1.png);}"\
+                                        "#pushButton_quit:pressed {border-image: url(:/beijing/file/exit_2.png);}"\
+                                        "#pushButton_quit:focus {outline:none;}");
 }
 void MainWindow::set_size(void)
 {
